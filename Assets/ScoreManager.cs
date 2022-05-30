@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    public int score;
+    public int currentScore;
+    public int highScore;
 
     //Singleton
     public static ScoreManager instance;
@@ -24,16 +25,33 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
        RestartScore(); 
+       highScore = PlayerPrefs.GetInt("HighScore",0);
+       UpdateHighScore(highScore);
     }
 
     public void RestartScore()
     {
-        score = 0;
+        currentScore = 0;
     }
 
-    public void AddScore(int score)
+    public void AddScore(int points)
     {
-        this.score += score;
-        UIManager.instance.UpdateScoreUI(this.score);
+        //Adds the points to the current score
+        currentScore += points;
+
+        //Updates the UI
+        UIManager.instance.UpdateScoreUI(currentScore);
+
+        //Updates the new high score
+        if(currentScore > highScore)
+        {
+            UpdateHighScore(highScore);
+            PlayerPrefs.SetInt("HighScore", currentScore);
+        }
+    }
+
+    public void UpdateHighScore(int score)
+    {
+        UIManager.instance.UpdateHighScoreUI(score);
     }
 }

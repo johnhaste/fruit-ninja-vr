@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 {
     [Header("UI Elements")]
     public TextMeshProUGUI textScore;
+    public TextMeshProUGUI textHighScore;
     public TextMeshProUGUI textTime;
 
     //Singleton
@@ -27,6 +28,11 @@ public class UIManager : MonoBehaviour
     public void UpdateScoreUI(int score)
     {
         textScore.text = "Score:" + score;
+    }
+
+    public void UpdateHighScoreUI(int score)
+    {
+        textHighScore.text = "High Score:" + score;
     }
 
     public void UpdateTimeUI(int seconds)

@@ -5,12 +5,12 @@ using UnityEngine;
 public class SliceListener : MonoBehaviour
 {
     public Slicer slicer;
+    public GameObject slicerGameObject;
     private void OnTriggerEnter(Collider other)
     {
-        
-
         if (other.gameObject.layer == LayerMask.NameToLayer("Sliceable"))
         {
+          slicerGameObject.SetActive(true);
           slicer.isTouched = true;
           Debug.Log("Touched a sliceable");
         }
@@ -18,7 +18,9 @@ public class SliceListener : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        // Destroy everything that leaves the trigger
-        //slicer.isTouched = false;
+        if (other.gameObject.layer == LayerMask.NameToLayer("Sliceable"))
+        {
+            slicerGameObject.SetActive(false);
+        }
     }
 }

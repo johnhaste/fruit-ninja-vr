@@ -31,13 +31,13 @@ public class Slicer : MonoBehaviour
                 //VibrationManager.instance.VibrateController(0.4f, 1, 0.3f, OVRInput.Controller.LTouch);
 
                 //Add Score
-                //ScoreManager.instance.AddScore(ScorePoints.SWORDCUBE_SCOREPOINT);
+                ScoreManager.instance.AddScore(50);
 
-             
+                print("SLICE");
+
                 upperHullGameobject.transform.position = objectToBeSliced.transform.position;
                 lowerHullGameobject.transform.position = objectToBeSliced.transform.position;
                
-
                 MakeItPhysical(upperHullGameobject, objectToBeSliced.gameObject.GetComponent<Rigidbody>().velocity);
                 MakeItPhysical(lowerHullGameobject, objectToBeSliced.gameObject.GetComponent<Rigidbody>().velocity);
 
@@ -51,19 +51,18 @@ public class Slicer : MonoBehaviour
     {
         obj.AddComponent<MeshCollider>().convex = true;
         obj.AddComponent<Rigidbody>();
-        obj.GetComponent<Rigidbody>().velocity = -_velocity;
+        //obj.GetComponent<Rigidbody>().velocity = -_velocity;
 
         int randomNumberX = Random.Range(0,2);
         int randomNumberY = Random.Range(0, 2);
         int randomNumberZ = Random.Range(0, 2);
 
         obj.GetComponent<Rigidbody>().AddForce(3*new Vector3(randomNumberX,randomNumberY,randomNumberZ),ForceMode.Impulse);       
-        //obj.AddComponent<DestroyAfterSeconds>();
+        obj.AddComponent<DestroyAfterSeconds>();
 
     }
 
    
-
     private SlicedHull SliceObject(GameObject obj, Material crossSectionMaterial = null)
     {
         // slice the provided object using the transforms of this object

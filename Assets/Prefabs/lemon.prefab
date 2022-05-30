@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4603010955798920215}
   - component: {fileID: 4603010955800051414}
   - component: {fileID: 3469233987599841622}
+  - component: {fileID: -8471035962559244933}
   m_Layer: 6
   m_Name: lemon
   m_TagString: Untagged
@@ -115,3 +116,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: 3f4d2118f6a772542a1635ef5bfa6982, type: 3}
+--- !u!114 &-8471035962559244933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4603010955796980437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ad183c88c873b49a9610616ebb788e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

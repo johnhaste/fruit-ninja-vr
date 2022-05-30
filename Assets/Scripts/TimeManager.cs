@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TimeManager : MonoBehaviour
 {
-    private int secondsLeft = 60;
+    public int secondsLeft = 60;
     private int secondsByMatch = 90;
 
     //Singleton

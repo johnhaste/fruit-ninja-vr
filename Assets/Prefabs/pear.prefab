@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5738094217285785098}
   - component: {fileID: 5738094217286882507}
   - component: {fileID: 4640345564227041214}
+  - component: {fileID: 8587071142336006361}
   m_Layer: 6
   m_Name: pear
   m_TagString: Untagged
@@ -115,3 +116,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300006, guid: 3f4d2118f6a772542a1635ef5bfa6982, type: 3}
+--- !u!114 &8587071142336006361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5738094217287715028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ad183c88c873b49a9610616ebb788e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

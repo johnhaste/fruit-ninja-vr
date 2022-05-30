@@ -18,6 +18,21 @@ public class FruitsSpawnerManager : MonoBehaviour
         StartCoroutine(CreateFruits());
     }
 
+    void Update()
+    {
+        int secondsLeft = TimeManager.instance.secondsLeft;
+
+        if(secondsLeft > 45){
+            timeRate = 5f;
+        }else if(secondsLeft > 30){
+            timeRate = 4f;
+        }else if(secondsLeft > 15){
+            timeRate = 3f;
+        }else{
+            timeRate = 2f;
+        }
+    }
+
     private IEnumerator CreateFruits()
     {
         while (true)
@@ -33,6 +48,8 @@ public class FruitsSpawnerManager : MonoBehaviour
                 }
             }
             yield return new WaitForSeconds(timeRate);
+            print(timeRate);
         }
     }
+
 }

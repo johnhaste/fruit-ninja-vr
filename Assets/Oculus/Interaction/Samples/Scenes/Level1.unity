@@ -576,7 +576,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 485921098}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -762,7 +762,7 @@ GameObject:
   - component: {fileID: 789259265}
   - component: {fileID: 789259264}
   - component: {fileID: 789259263}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -913,7 +913,7 @@ GameObject:
   - component: {fileID: 1130145068}
   - component: {fileID: 1130145067}
   - component: {fileID: 1130145071}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1427,6 +1427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb800b9cada3bc4f90fc8fc83931890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  secondsLeft: 60
 --- !u!1 &1664767065
 GameObject:
   m_ObjectHideFlags: 0
@@ -1439,7 +1440,7 @@ GameObject:
   - component: {fileID: 1664767068}
   - component: {fileID: 1664767067}
   - component: {fileID: 1664767066}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1774,7 +1775,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1797630598}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}

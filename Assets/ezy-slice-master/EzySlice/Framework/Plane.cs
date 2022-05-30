@@ -51,7 +51,8 @@ namespace EzySlice {
 #endif
         }
         
-        public Plane(Vector3 a, Vector3 b, Vector3 c) {
+        public Plane(Vector3 a, Vector3 b, Vector3 c)
+        {
             m_normal = Vector3.Normalize(Vector3.Cross(b - a, c - a));
             m_dist = -Vector3.Dot(m_normal, a);
             

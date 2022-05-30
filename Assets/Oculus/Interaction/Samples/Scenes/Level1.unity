@@ -123,6 +123,75 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &12738693
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 623298045}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.20000002
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.20000003
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.014
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.031
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.043
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.67715687
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.20361376
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.20361376
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.67715687
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -33.471
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_Name
+      value: ZangekiNoReginleiv_Model_largesword_samurai_DAE (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
 --- !u!1001 &101214838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -133,6 +202,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 37ba10a26a648144fa2390c8adfb2c8a, type: 3}
       propertyPath: m_Name
       value: OculusTouchForQuestAndRiftS_Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 37ba10a26a648144fa2390c8adfb2c8a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 37ba10a26a648144fa2390c8adfb2c8a, type: 3}
       propertyPath: m_RootOrder
@@ -180,6 +253,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37ba10a26a648144fa2390c8adfb2c8a, type: 3}
+--- !u!1001 &296685026
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 623298046}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.014205065
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.031
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.043
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.67715687
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.20361376
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.20361376
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.67715687
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -33.471
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
+      propertyPath: m_Name
+      value: ZangekiNoReginleiv_Model_largesword_samurai_DAE
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2548abc0ffa63eb4081109e5f8bccf14, type: 3}
 --- !u!1001 &454784583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -190,6 +332,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 32fbc8bcebb64584da5868aeeb086cda, type: 3}
       propertyPath: m_Name
       value: OculusTouchForQuestAndRiftS_Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 32fbc8bcebb64584da5868aeeb086cda, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 32fbc8bcebb64584da5868aeeb086cda, type: 3}
       propertyPath: m_RootOrder

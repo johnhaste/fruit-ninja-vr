@@ -43,16 +43,19 @@ public class FruitsSpawnerManager : MonoBehaviour
                 if(waveNumber == 1)
                 {
                     indexFruit = Random.Range(0, 4);
-                    indexFruitsSpawner = Random.Range(0,2);
+                    indexFruitsSpawner = Random.Range(0,3);
                     GameObject fruit = Instantiate(Fruitprefabs[indexFruit], FruitsSpawner[indexFruitsSpawner].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
                     
                     Vector3 canonForce = new Vector3(0f,0f,0f);
                     switch(indexFruitsSpawner){
                         case 0:
-                            canonForce = new Vector3(2f,5f,0f);
+                            canonForce = new Vector3(2f,5f,-2f);
                             break;
                         case 1:
                             canonForce = new Vector3(-2f,5f,0f);
+                            break;
+                        case 2:
+                            canonForce = new Vector3(0f,5f,-2f);
                             break;
                     }
                     

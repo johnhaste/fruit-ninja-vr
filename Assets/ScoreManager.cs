@@ -23,12 +23,17 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
+       RestartScore(); 
+    }
+
+    public void RestartScore()
+    {
         score = 0;
     }
 
     public void AddScore(int score)
     {
         this.score += score;
-        UIManager.instance.UpdateScore(this.score);
+        UIManager.instance.UpdateScoreUI(this.score);
     }
 }

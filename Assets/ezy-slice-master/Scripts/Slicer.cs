@@ -34,7 +34,7 @@ public class Slicer : MonoBehaviour
                 }
 
                 //Vibration
-                VibrationManager.instance.VibrateController(0.4f, 1, 0.3f, OVRInput.Controller.LTouch);
+                VibrationManager.instance.VibrateController(0.4f, 1, 0.3f, OVRInput.Controller.RTouch);
 
                 //Add Score
                 ScoreManager.instance.AddScore(50);

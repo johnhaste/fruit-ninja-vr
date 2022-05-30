@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TimeManager : MonoBehaviour
 {
-    public int secondsLeft = 65;
+    private int secondsLeft = 10;
 
     //Singleton
     public static TimeManager instance;
@@ -29,10 +29,17 @@ public class TimeManager : MonoBehaviour
     {
         while (true)
         {
-            secondsLeft--;
-            if(secondsLeft > 0){
+            //Updates the current time UI or ends game
+            if(secondsLeft > 0)
+            {
+                secondsLeft--;
                 UIManager.instance.UpdateTimeUI(secondsLeft);
+            }else
+            {
+                StopCoroutine(DecreaseTime());
+                GameStateManager.instance.EndGame();
             }
+
             yield return new WaitForSeconds(1f);
         }
     }

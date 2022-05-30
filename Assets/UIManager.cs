@@ -7,6 +7,7 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     [Header("UI Elements")]
+    public TextMeshProUGUI textMessage;
     public TextMeshProUGUI textScore;
     public TextMeshProUGUI textHighScore;
     public TextMeshProUGUI textTime;
@@ -25,9 +26,19 @@ public class UIManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void HideUIElement(TextMeshProUGUI UIElement)
+    {
+        UIElement.gameObject.SetActive(false);
+    }
+
     public void UpdateScoreUI(int score)
     {
-        textScore.text = "Score:" + score;
+        if(GameStateManager.instance.currentGameState == GameStateManager.GameState.INGAME){
+            textScore.text = "Score:" + score;
+        }else if (GameStateManager.instance.currentGameState == GameStateManager.GameState.ENDGAME){
+            textScore.text = "Final Score:" + score;
+        }
+        
     }
 
     public void UpdateHighScoreUI(int score)
@@ -47,6 +58,10 @@ public class UIManager : MonoBehaviour
         secondsDisplay = _seconds < 10 ? "0" + _seconds.ToString() : _seconds.ToString();
   
         textTime.text = "Time left:" + minutesDisplay + ":" + secondsDisplay;
+    }
+
+    public void UpdateMessageUI(string message){
+        textMessage.text = message;
     }
 
 }

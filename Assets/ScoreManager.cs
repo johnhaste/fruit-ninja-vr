@@ -38,15 +38,19 @@ public class ScoreManager : MonoBehaviour
     {
         //Adds the points to the current score
         currentScore += points;
+        UpdateScore();
+    }
 
+    public void UpdateScore()
+    {
         //Updates the UI
-        UIManager.instance.UpdateScoreUI(currentScore);
+        UIManager.instance.UpdateScoreUI(currentScore); 
 
         //Updates the new high score
         if(currentScore > highScore)
         {
-            UpdateHighScore(highScore);
-            PlayerPrefs.SetInt("HighScore", currentScore);
+           UpdateHighScore(highScore);
+           PlayerPrefs.SetInt("HighScore", currentScore);
         }
     }
 

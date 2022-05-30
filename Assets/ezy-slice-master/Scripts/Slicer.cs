@@ -27,6 +27,12 @@ public class Slicer : MonoBehaviour
                 //AudioManager.instance.sliceSound.gameObject.transform.position = objectToBeSliced.transform.position;
                 //AudioManager.instance.sliceSound.Play();
 
+                //Restart Fruit
+                if(objectToBeSliced.name == "RestartFruit")
+                {
+                    GameStateManager.instance.RestartGame();
+                }
+
                 //Vibration
                 VibrationManager.instance.VibrateController(0.4f, 1, 0.3f, OVRInput.Controller.LTouch);
 
@@ -66,5 +72,4 @@ public class Slicer : MonoBehaviour
         // slice the provided object using the transforms of this object
         return obj.Slice(transform.position, transform.up, crossSectionMaterial);
     }
-
 }

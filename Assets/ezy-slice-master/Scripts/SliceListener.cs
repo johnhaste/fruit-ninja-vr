@@ -12,7 +12,6 @@ public class SliceListener : MonoBehaviour
         {
           slicerGameObject.SetActive(true);
           slicer.isTouched = true;
-          Debug.Log("Touched a sliceable");
         }
     }
 

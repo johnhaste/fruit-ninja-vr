@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TimeManager : MonoBehaviour
 {
-    private int secondsLeft = 10;
+    private int secondsLeft = 5;
+    private int secondsByMatch = 90;
 
     //Singleton
     public static TimeManager instance;
@@ -25,6 +26,11 @@ public class TimeManager : MonoBehaviour
         StartCoroutine(DecreaseTime());
     }
 
+    public void RestartTimer()
+    {
+        secondsLeft = secondsByMatch;
+    }
+
     private IEnumerator DecreaseTime()
     {
         while (true)
@@ -43,6 +49,4 @@ public class TimeManager : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
     }
-
-
 }

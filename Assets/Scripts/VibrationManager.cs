@@ -8,7 +8,8 @@ public class VibrationManager : MonoBehaviour
     public static VibrationManager instance;
     
     //Singleton
-    private void Awake(){
+    private void Awake()
+    {
         if(instance != null && instance != this){
             Destroy(this.gameObject);
             return;

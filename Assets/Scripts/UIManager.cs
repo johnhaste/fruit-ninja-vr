@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI textScore;
     public TextMeshProUGUI textHighScore;
     public TextMeshProUGUI textTime;
+    public GameObject restartUI;
+    public GameObject restartUIInstance;
 
     //Singleton
     public static UIManager instance;
@@ -29,6 +31,11 @@ public class UIManager : MonoBehaviour
     public void HideUIElement(TextMeshProUGUI UIElement)
     {
         UIElement.gameObject.SetActive(false);
+    }
+
+    public void DisplayUIElement(TextMeshProUGUI UIElement)
+    {
+        UIElement.gameObject.SetActive(true);
     }
 
     public void UpdateScoreUI(int score)
@@ -60,8 +67,21 @@ public class UIManager : MonoBehaviour
         textTime.text = "Time left:" + minutesDisplay + ":" + secondsDisplay;
     }
 
-    public void UpdateMessageUI(string message){
+    public void UpdateMessageUI(string message)
+    {
         textMessage.text = message;
+    }
+
+    public void DisplayRestartUI()
+    {
+        if(restartUIInstance == null){
+            restartUIInstance = Instantiate(restartUI, new Vector3(0f, 1f, 2.5f), Quaternion.Euler(0, 0, 0)) as GameObject;
+        }
+    }
+
+    public void DestroyRestartUI()
+    {
+        Destroy(restartUIInstance);
     }
 
 }

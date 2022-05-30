@@ -20,10 +20,12 @@ public class FruitsSpawner : MonoBehaviour
     {
         while (true)
         {
-            indexFruit = Random.Range(0, 4);
-            GameObject fruit = Instantiate(Fruitprefabs[indexFruit], this.transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
-            //fruit.transform.localScale = new Vector3(10f,10f,10f);
-            //fruit.transform.SetParent(transform);
+            if(GameStateManager.instance.currentGameState == GameStateManager.GameState.INGAME){
+                indexFruit = Random.Range(0, 4);
+                GameObject fruit = Instantiate(Fruitprefabs[indexFruit], this.transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+                //fruit.transform.localScale = new Vector3(10f,10f,10f);
+                //fruit.transform.SetParent(transform);
+            }
             yield return new WaitForSeconds(timeRate);
         }
     }

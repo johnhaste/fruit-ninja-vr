@@ -8,6 +8,7 @@ public class FruitsSpawnerManager : MonoBehaviour
     public GameObject[] Fruitprefabs;
     public GameObject[] FruitsSpawner;
     private int indexFruit;
+    private int indexFruitsSpawner;
     private int waveNumber = 1;
 
     public float timeRate;
@@ -42,8 +43,21 @@ public class FruitsSpawnerManager : MonoBehaviour
                 if(waveNumber == 1)
                 {
                     indexFruit = Random.Range(0, 4);
-                    GameObject fruit = Instantiate(Fruitprefabs[indexFruit], FruitsSpawner[0].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
-                    fruit.GetComponent<Rigidbody>().AddForce(3 * new Vector3(2f,5f,0f), ForceMode.Impulse);       
+                    indexFruitsSpawner = Random.Range(0,2);
+                    GameObject fruit = Instantiate(Fruitprefabs[indexFruit], FruitsSpawner[indexFruitsSpawner].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+                    
+                    Vector3 canonForce = new Vector3(0f,0f,0f);
+                    switch(indexFruitsSpawner){
+                        case 0:
+                            canonForce = new Vector3(2f,5f,0f);
+                            break;
+                        case 1:
+                            canonForce = new Vector3(-2f,5f,0f);
+                            break;
+                    }
+                    
+                    
+                    fruit.GetComponent<Rigidbody>().AddForce(3 * canonForce, ForceMode.Impulse);       
                     fruit.transform.SetParent(transform);
                 }
             }

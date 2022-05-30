@@ -28,12 +28,10 @@ public class Slicer : MonoBehaviour
                 //AudioManager.instance.sliceSound.Play();
 
                 //Vibration
-                //VibrationManager.instance.VibrateController(0.4f, 1, 0.3f, OVRInput.Controller.LTouch);
+                VibrationManager.instance.VibrateController(0.4f, 1, 0.3f, OVRInput.Controller.LTouch);
 
                 //Add Score
                 ScoreManager.instance.AddScore(50);
-
-                print("SLICE");
 
                 upperHullGameobject.transform.position = objectToBeSliced.transform.position;
                 lowerHullGameobject.transform.position = objectToBeSliced.transform.position;

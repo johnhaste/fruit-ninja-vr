@@ -1490,6 +1490,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Fruitprefabs:
   - {fileID: 2151322639164733620, guid: 7d65f0242795195438a045e6343d393c, type: 3}
+  - {fileID: 4835992037669774889, guid: d87ca3a222129d948b1bad9c57627852, type: 3}
+  - {fileID: 4442989316747712477, guid: 3e82cc623b678a848be74b0e13f14a8c, type: 3}
+  - {fileID: 7506411524124038369, guid: a5f0162c8b5287b4eab46defdc46fc73, type: 3}
   FruitsSpawner:
   - {fileID: 1307876930}
   - {fileID: 861063205}

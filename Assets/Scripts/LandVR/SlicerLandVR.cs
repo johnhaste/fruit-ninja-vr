@@ -34,7 +34,7 @@ public class SlicerLandVR : MonoBehaviour
                 //AudioManager.instance.sliceSound.Play();
 
                 //Restart Fruit
-                if(this.name == "RestartFruit")
+                if(objectToBeSliced.gameObject.name == "RestartFruit")
                 {
                     GameStateManager.instance.RestartGame();
                 }

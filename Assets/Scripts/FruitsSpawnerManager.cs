@@ -21,7 +21,7 @@ public class FruitsSpawnerManager : MonoBehaviour
 
     void Update()
     {
-        int secondsLeft = TimeManager.instance.secondsLeft;
+        int secondsLeft = TimeManager.instance.GetSecondsLeft();
 
         if(secondsLeft > 45){
             timeRate = 5f;

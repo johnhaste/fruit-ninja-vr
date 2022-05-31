@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TimeManager : MonoBehaviour
 {
-    public int secondsLeft = 60;
+    [SerializeField] private int secondsLeft = 5;
     private int secondsByMatch = 90;
 
     //Singleton
@@ -24,6 +24,11 @@ public class TimeManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(DecreaseTime());
+    }
+
+    public int GetSecondsLeft()
+    {
+        return secondsLeft;
     }
 
     public void RestartTimer()

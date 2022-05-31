@@ -5,11 +5,13 @@ public class SlicerLandVR : MonoBehaviour
     public Material defaultMaterial;
     public LayerMask sliceMask;
     public bool isTouched;
-
+    
     private void Update()
     {
         if (isTouched == true)
         {
+            this.GetComponent<MeshCollider>().enabled = true;
+
             isTouched = false;
 
             Collider[] objectsToBeSliced = Physics.OverlapBox(transform.position, new Vector3(1, 0.1f, 0.1f), transform.rotation, sliceMask);
@@ -42,8 +44,7 @@ public class SlicerLandVR : MonoBehaviour
                 Destroy(objectToBeSliced.gameObject);
 
                 //Slice Sound
-                //AudioManager.instance.sliceSound.gameObject.transform.position = objectToBeSliced.transform.position;
-                //AudioManager.instance.sliceSound.Play();
+                AudioManager.instance.PlaySplashSound(objectToBeSliced.transform.position);
 
                 //Vibration
                 VibrationManager.instance.VibrateController(0.4f, 1, 0.3f, OVRInput.Controller.RTouch);
@@ -55,6 +56,8 @@ public class SlicerLandVR : MonoBehaviour
                 upperHullGameobject.gameObject.AddComponent<DestroyAfterSeconds>();
                 lowerHullGameobject.gameObject.AddComponent<DestroyAfterSeconds>();
             }
+
+            this.GetComponent<MeshCollider>().enabled = false;
         }
     }
 

@@ -10,7 +10,7 @@ public class SliceListener : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Sliceable"))
         {
-          slicerGameObject.SetActive(true);
+          //slicerGameObject.SetActive(true);
           slicer.isTouched = true;
         }
     }
@@ -19,7 +19,7 @@ public class SliceListener : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Sliceable"))
         {
-            slicerGameObject.SetActive(false);
+            //slicerGameObject.SetActive(false);
         }
     }
 }

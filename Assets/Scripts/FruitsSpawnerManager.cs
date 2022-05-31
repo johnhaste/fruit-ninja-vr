@@ -42,20 +42,23 @@ public class FruitsSpawnerManager : MonoBehaviour
 
                 if(waveNumber == 1)
                 {
-                    indexFruit = Random.Range(0, 4);
-                    indexFruitsSpawner = Random.Range(0,3);
+                    indexFruit = Random.Range(0, Fruitprefabs.Length);
+                    indexFruitsSpawner = Random.Range(0,FruitsSpawner.Length);
                     GameObject fruit = Instantiate(Fruitprefabs[indexFruit], FruitsSpawner[indexFruitsSpawner].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
                     
                     Vector3 canonForce = new Vector3(0f,0f,0f);
                     switch(indexFruitsSpawner){
                         case 0:
-                            canonForce = new Vector3(2f,5f,-2f);
+                            //Left
+                            canonForce = new Vector3(4f,5f,-4f);
                             break;
                         case 1:
-                            canonForce = new Vector3(-2f,5f,0f);
+                            //Right
+                            canonForce = new Vector3(-4f,5f,-4f);
                             break;
                         case 2:
-                            canonForce = new Vector3(0f,5f,-2f);
+                            //Center
+                            canonForce = new Vector3(0f,5f,-4f);
                             break;
                     }
                     
@@ -65,7 +68,7 @@ public class FruitsSpawnerManager : MonoBehaviour
                 }
             }
             yield return new WaitForSeconds(timeRate);
-            print(timeRate);
+            //print(timeRate);
         }
     }
 

@@ -32,6 +32,7 @@ public class ScoreManager : MonoBehaviour
     public void RestartScore()
     {
         currentScore = 0;
+        UpdateScore();
     }
 
     public void AddScore(int points)

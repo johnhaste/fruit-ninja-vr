@@ -502,11 +502,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1435089751402464533, guid: ae50880ea5d195b4cbd5a0322e5c3ac5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.05
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 1435089751402464533, guid: ae50880ea5d195b4cbd5a0322e5c3ac5, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1435089751402464533, guid: ae50880ea5d195b4cbd5a0322e5c3ac5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -518,7 +518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1435089751402464535, guid: ae50880ea5d195b4cbd5a0322e5c3ac5, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1435089752680284194, guid: ae50880ea5d195b4cbd5a0322e5c3ac5, type: 3}
       propertyPath: defaultMaterial
@@ -526,11 +526,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 33749956b93f34d4aa5596cf9300e08c, type: 2}
     - target: {fileID: 1435089752680284198, guid: ae50880ea5d195b4cbd5a0322e5c3ac5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.878
+      value: 0.846
       objectReference: {fileID: 0}
     - target: {fileID: 1435089752680284198, guid: ae50880ea5d195b4cbd5a0322e5c3ac5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.01
+      value: -0.056
       objectReference: {fileID: 0}
     - target: {fileID: 1435089752756966889, guid: ae50880ea5d195b4cbd5a0322e5c3ac5, type: 3}
       propertyPath: m_RootOrder
@@ -1502,6 +1502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Fruitprefabs:
   - {fileID: 2151322639164733620, guid: 7d65f0242795195438a045e6343d393c, type: 3}
+  - {fileID: 4603010955796980437, guid: 89362358db7018543a78599f9414273c, type: 3}
   FruitsSpawner:
   - {fileID: 1307876930}
   - {fileID: 861063205}

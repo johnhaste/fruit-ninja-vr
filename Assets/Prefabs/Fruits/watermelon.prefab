@@ -130,3 +130,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastPosition: {x: 0, y: 0, z: 0}
   insideMaterial: {fileID: 2100000, guid: 33749956b93f34d4aa5596cf9300e08c, type: 2}
+  splashParticleFruit: {fileID: 3733782003175091835, guid: 20a802ad641c8f84caa6dfbee356ad2f, type: 3}

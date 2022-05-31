@@ -50,15 +50,15 @@ public class FruitsSpawnerManager : MonoBehaviour
                     switch(indexFruitsSpawner){
                         case 0:
                             //Left
-                            canonForce = new Vector3(4f,5f,-4f);
+                            canonForce = new Vector3(4f,5f,-6f);
                             break;
                         case 1:
                             //Right
-                            canonForce = new Vector3(-4f,5f,-4f);
+                            canonForce = new Vector3(-4f,5f,-5f);
                             break;
                         case 2:
                             //Center
-                            canonForce = new Vector3(0f,5f,-4f);
+                            canonForce = new Vector3(0f,5f,-6f);
                             break;
                     }
                     

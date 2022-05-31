@@ -114,13 +114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76ad183c88c873b49a9610616ebb788e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slicer: {fileID: 1492915356053841134, guid: 71e05e88e65053b4e9d42222c68a80d6, type: 3}
   lastPosition: {x: 0, y: 0, z: 0}
-  MaterialAfterSlice: {fileID: 2100000, guid: 33749956b93f34d4aa5596cf9300e08c, type: 2}
-  sliceMask:
-    serializedVersion: 2
-    m_Bits: 64
-  red: {fileID: 2100000, guid: 33749956b93f34d4aa5596cf9300e08c, type: 2}
+  insideMaterial: {fileID: 2100000, guid: 91047370db5ba2a438e729d52400b1e2, type: 2}
 --- !u!136 &8830074782829217575
 CapsuleCollider:
   m_ObjectHideFlags: 0

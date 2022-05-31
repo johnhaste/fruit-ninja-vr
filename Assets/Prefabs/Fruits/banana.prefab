@@ -129,3 +129,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastPosition: {x: 0, y: 0, z: 0}
+  insideMaterial: {fileID: 2100000, guid: 91047370db5ba2a438e729d52400b1e2, type: 2}

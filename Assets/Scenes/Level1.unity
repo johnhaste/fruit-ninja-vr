@@ -172,7 +172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 37ba10a26a648144fa2390c8adfb2c8a, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 37ba10a26a648144fa2390c8adfb2c8a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -512,6 +512,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1435089752680284194, guid: ae50880ea5d195b4cbd5a0322e5c3ac5, type: 3}
+      propertyPath: defaultMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 33749956b93f34d4aa5596cf9300e08c, type: 2}
     - target: {fileID: 1435089752680284198, guid: ae50880ea5d195b4cbd5a0322e5c3ac5, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.861
@@ -522,7 +526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1435089752756966889, guid: ae50880ea5d195b4cbd5a0322e5c3ac5, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1435089752756966889, guid: ae50880ea5d195b4cbd5a0322e5c3ac5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1491,8 +1495,8 @@ MonoBehaviour:
   Fruitprefabs:
   - {fileID: 2151322639164733620, guid: 7d65f0242795195438a045e6343d393c, type: 3}
   - {fileID: 4835992037669774889, guid: d87ca3a222129d948b1bad9c57627852, type: 3}
-  - {fileID: 4442989316747712477, guid: 3e82cc623b678a848be74b0e13f14a8c, type: 3}
-  - {fileID: 7506411524124038369, guid: a5f0162c8b5287b4eab46defdc46fc73, type: 3}
+  - {fileID: 4603010955796980437, guid: 89362358db7018543a78599f9414273c, type: 3}
+  - {fileID: 3181747929474367549, guid: 85e405a7371e5ed42b7f58392daee271, type: 3}
   FruitsSpawner:
   - {fileID: 1307876930}
   - {fileID: 861063205}
@@ -2010,7 +2014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb800b9cada3bc4f90fc8fc83931890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsLeft: 60
+  secondsLeft: 5
 --- !u!1 &1669825662
 GameObject:
   m_ObjectHideFlags: 0

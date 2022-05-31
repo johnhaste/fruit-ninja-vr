@@ -6,6 +6,7 @@ using EzySlice;
 public class Fruit : MonoBehaviour
 {
     public Vector3 lastPosition;
+    public Material insideMaterial;
 
     void Update()
     {

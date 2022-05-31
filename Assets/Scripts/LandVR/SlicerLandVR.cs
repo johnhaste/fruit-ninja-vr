@@ -2,7 +2,7 @@
 using EzySlice;
 public class SlicerLandVR : MonoBehaviour
 {
-    public Material materialAfterSlice;
+    public Material defaultMaterial;
     public LayerMask sliceMask;
     public bool isTouched;
 
@@ -16,10 +16,21 @@ public class SlicerLandVR : MonoBehaviour
             
             foreach (Collider objectToBeSliced in objectsToBeSliced)
             {
-                SlicedHull slicedObject = SliceObject(objectToBeSliced.gameObject, materialAfterSlice);
+                Material insideMaterial;
 
-                GameObject upperHullGameobject = slicedObject.CreateUpperHull(objectToBeSliced.gameObject, materialAfterSlice);
-                GameObject lowerHullGameobject = slicedObject.CreateLowerHull(objectToBeSliced.gameObject, materialAfterSlice);
+                //Restart Fruit
+                if(objectToBeSliced.gameObject.name == "RestartFruit")
+                {
+                    GameStateManager.instance.RestartGame();
+                    insideMaterial = defaultMaterial;
+                }else{
+                    insideMaterial = objectToBeSliced.gameObject.GetComponent<Fruit>().insideMaterial;
+                }
+
+                SlicedHull slicedObject = SliceObject(objectToBeSliced.gameObject, insideMaterial);
+
+                GameObject upperHullGameobject = slicedObject.CreateUpperHull(objectToBeSliced.gameObject, insideMaterial);
+                GameObject lowerHullGameobject = slicedObject.CreateLowerHull(objectToBeSliced.gameObject, insideMaterial);
 
                 upperHullGameobject.transform.position = objectToBeSliced.transform.position;
                 lowerHullGameobject.transform.position = objectToBeSliced.transform.position;
@@ -33,17 +44,15 @@ public class SlicerLandVR : MonoBehaviour
                 //AudioManager.instance.sliceSound.gameObject.transform.position = objectToBeSliced.transform.position;
                 //AudioManager.instance.sliceSound.Play();
 
-                //Restart Fruit
-                if(objectToBeSliced.gameObject.name == "RestartFruit")
-                {
-                    GameStateManager.instance.RestartGame();
-                }
-
                 //Vibration
                 VibrationManager.instance.VibrateController(0.4f, 1, 0.3f, OVRInput.Controller.RTouch);
 
                 //Add Score
                 ScoreManager.instance.AddScore(50);
+
+                //Destroys the slices after a few seconds
+                upperHullGameobject.gameObject.AddComponent<DestroyAfterSeconds>();
+                lowerHullGameobject.gameObject.AddComponent<DestroyAfterSeconds>();
             }
         }
     }

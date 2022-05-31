@@ -8,5 +8,10 @@ public class SliceListenerLandVR : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         slicer.isTouched = true;
+
+        if(other.name == "RestartFruit")
+        {
+            GameStateManager.instance.RestartGame();
+        }
     }
 }

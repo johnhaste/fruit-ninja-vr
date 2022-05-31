@@ -25,6 +25,7 @@ public class SlicerLandVR : MonoBehaviour
                     insideMaterial = defaultMaterial;
                 }else{
                     insideMaterial = objectToBeSliced.gameObject.GetComponent<Fruit>().insideMaterial;
+                    objectToBeSliced.gameObject.GetComponent<Fruit>().EmitSplash();
                 }
 
                 SlicedHull slicedObject = SliceObject(objectToBeSliced.gameObject, insideMaterial);

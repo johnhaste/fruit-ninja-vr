@@ -938,8 +938,8 @@ Transform:
   - {fileID: 1735748702}
   - {fileID: 1234046933}
   - {fileID: 1788298051}
-  - {fileID: 413417813}
   - {fileID: 1146018040}
+  - {fileID: 413417813}
   - {fileID: 1303353029}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -1479,7 +1479,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 485921098}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1179332241 stripped
 Transform:
@@ -2215,7 +2215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb800b9cada3bc4f90fc8fc83931890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsLeft: 10
+  secondsLeft: 50
 --- !u!1 &1669825662
 GameObject:
   m_ObjectHideFlags: 0

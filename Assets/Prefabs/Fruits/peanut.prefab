@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3986320040724630424}
   - component: {fileID: 3986320040725629272}
   - component: {fileID: 3986320040724630425}
-  - component: {fileID: 4077551005231428360}
   - component: {fileID: -4149404864076130751}
   - component: {fileID: 8830074782829217575}
   m_Layer: 6
@@ -103,20 +102,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!64 &4077551005231428360
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3986320040723634074}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300018, guid: 3f4d2118f6a772542a1635ef5bfa6982, type: 3}
 --- !u!114 &-4149404864076130751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slicer: {fileID: 1492915356053841134, guid: 71e05e88e65053b4e9d42222c68a80d6, type: 3}
   lastPosition: {x: 0, y: 0, z: 0}
-  MaterialAfterSlice: {fileID: 2100000, guid: 33749956b93f34d4aa5596cf9300e08c, type: 2}
+  MaterialAfterSlice: {fileID: 2100000, guid: 1a96f2c436c09b745985d5faf060545d, type: 2}
   sliceMask:
     serializedVersion: 2
     m_Bits: 64

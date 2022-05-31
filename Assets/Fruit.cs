@@ -32,6 +32,7 @@ public class Fruit : MonoBehaviour
     {
         if (other.gameObject.name == "Blade")
         {
+            //print("CUT");
             SlicedHull slicedObject = SliceObject(this.gameObject, MaterialAfterSlice);
 
             if(slicedObject != null){
@@ -46,8 +47,20 @@ public class Fruit : MonoBehaviour
 
                 Destroy(this.gameObject);
             }else{
-                print("CORTE NAO FOI");
+
+                SlicedHull slicedObject2 = SliceObjectAnyway(this.gameObject, MaterialAfterSlice);
                 //this.gameObject.GetComponent<Renderer>().material = red;
+
+                GameObject upperHullGameobject = slicedObject.CreateUpperHull(this.gameObject, MaterialAfterSlice);
+                GameObject lowerHullGameobject = slicedObject.CreateLowerHull(this.gameObject, MaterialAfterSlice);
+
+                upperHullGameobject.transform.position = this.transform.position;
+                lowerHullGameobject.transform.position = this.transform.position;
+                
+                MakeItPhysical(upperHullGameobject, this.gameObject.GetComponent<Rigidbody>().velocity);
+                MakeItPhysical(lowerHullGameobject, this.gameObject.GetComponent<Rigidbody>().velocity);
+
+                Destroy(this.gameObject);
             }
 
             //Slice Sound
@@ -87,6 +100,12 @@ public class Fruit : MonoBehaviour
     private SlicedHull SliceObject(GameObject obj, Material crossSectionMaterial = null)
     {
         // slice the provided object using the transforms of this object
-        return this.gameObject.Slice(slicer.transform.position, slicer.transform.up, crossSectionMaterial);
+        return obj.Slice(transform.position, transform.up, MaterialAfterSlice);
+    }
+
+    private SlicedHull SliceObjectAnyway(GameObject obj, Material crossSectionMaterial = null)
+    {
+        // slice the provided object using the transforms of this object
+        return obj.gameObject.Slice(transform.position, transform.up, MaterialAfterSlice);
     }
 }

@@ -19,13 +19,11 @@ public class MovementDetector : MonoBehaviour
            float movementDifferenceY =  Mathf.Abs(lastPosition.y - transform.position.y);
            float movementDifferenceX =  Mathf.Abs(lastPosition.x - transform.position.x);
            float movementDifferenceZ =  Mathf.Abs(lastPosition.z - transform.position.z);
-           print("Difference:"+movementDifferenceY); 
            if(movementDifferenceY + movementDifferenceX + movementDifferenceZ > 0.8f ){
                AudioManager.instance.PlaySwordWoosh(transform.position);
            }
            lastPosition = transform.position;
-           yield return new WaitForSeconds(0.3f);
-           //print("Last position:"+lastPosition);
+           yield return new WaitForSeconds(0.4f);
         }
     }
 }

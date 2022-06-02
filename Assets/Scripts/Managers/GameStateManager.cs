@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GameStateManager : MonoBehaviour
 {
-    public enum GameState{
+    public enum GameState
+    {
         PREGAME, INGAME, ENDGAME, RESTARTINGGAME
     }
 
@@ -38,9 +39,9 @@ public class GameStateManager : MonoBehaviour
     public void EndGame()
     {
         currentGameState = GameState.ENDGAME;
-        UIManager.instance.DisplayRestartUI();
+        StartCoroutine(WaitAndDisplayRestartUI(2f));
         ScoreManager.instance.UpdateScore();
-        UIManager.instance.UpdateMessageUI("The end, slash to restart!");
+        UIManager.instance.UpdateMessageUI("The end!");
         UIManager.instance.HideUIElement(UIManager.instance.textTime);
     }
 
@@ -49,6 +50,13 @@ public class GameStateManager : MonoBehaviour
         print("Restarting Game");
         StartCoroutine(WaitAndRestart(2f));
     }
+
+    IEnumerator WaitAndDisplayRestartUI(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        UIManager.instance.DisplayRestartUI();
+    }
+
 
     IEnumerator WaitAndRestart(float duration)
     {

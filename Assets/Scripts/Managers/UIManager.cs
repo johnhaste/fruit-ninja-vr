@@ -74,8 +74,9 @@ public class UIManager : MonoBehaviour
 
     public void DisplayRestartUI()
     {
-        if(restartUIInstance == null){
-            restartUIInstance = Instantiate(restartUI, new Vector3(0f, 7f, 0.5f), Quaternion.Euler(0, 0, 0)) as GameObject;
+        if(restartUIInstance == null)
+        {
+            restartUIInstance = Instantiate(restartUI, new Vector3(0f, 7.5f, 0.8f), Quaternion.Euler(0, 0, 0)) as GameObject;
         }
     }
 

@@ -82,31 +82,43 @@ public class FruitsSpawnerManager : MonoBehaviour
 
     public void InstantiateRandomFruit()
     {
-        indexFruit = Random.Range(0, Fruitprefabs.Length);
-        GameObject fruit = Instantiate(Fruitprefabs[indexFruit], FruitsSpawner[indexFruitsSpawner].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
-        AudioManager.instance.PlayCanonSound(FruitsSpawner[indexFruitsSpawner].transform.position);
+        if(GameStateManager.instance.currentGameState == GameStateManager.GameState.INGAME)
+        {
+            indexFruit = Random.Range(0, Fruitprefabs.Length);
+            GameObject fruit = Instantiate(Fruitprefabs[indexFruit], FruitsSpawner[indexFruitsSpawner].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+            AudioManager.instance.PlayCanonSound(FruitsSpawner[indexFruitsSpawner].transform.position);
 
-        Vector3 canonForce = new Vector3(0f,0f,0f);
-        switch(indexFruitsSpawner){
-            case 0:
-                //Left
-                canonForce = new Vector3(4f,Random.Range(4,6),-6f);
-                break;
-            case 1:
-                //Center
-                canonForce = new Vector3(0f,Random.Range(4,6),-6f);
-                break;
-            case 2:
-                //Right
-                canonForce = new Vector3(-4f,Random.Range(4,6),-5f);
-                break;
-            case 3:
-                //top
-                canonForce = new Vector3(0f,Random.Range(1,3),-11f);
-                break;
+            Vector3 canonForce = new Vector3(0f,0f,0f);
+            switch(indexFruitsSpawner){
+                case 0:
+                    //Left
+                    canonForce = new Vector3(4f,Random.Range(4,5),Random.Range(-6f,-7f));
+                    break;
+                case 1:
+                    //Center
+                    canonForce = new Vector3(0f,Random.Range(4,5),Random.Range(-6f,-7f));
+                    break;
+                case 2:
+                    //Right
+                    canonForce = new Vector3(-4f,Random.Range(4,5),Random.Range(-6f,-7f));
+                    break;
+                case 3:
+                    //top-left
+                    canonForce = new Vector3(4f,Random.Range(1,2),Random.Range(-10f,-11f));
+                    break;
+                case 4:
+                    //top
+                    canonForce = new Vector3(0f,Random.Range(1,2),Random.Range(-10f,-11f));
+                    break;
+                case 5:
+                    //top-right
+                    canonForce = new Vector3(-4f,Random.Range(1,2),Random.Range(-10f,-11f));
+                    break;
+            }
+                                    
+            fruit.GetComponent<Rigidbody>().AddForce(3 * canonForce, ForceMode.Impulse);       
+            fruit.transform.SetParent(transform);
         }
-                                
-        fruit.GetComponent<Rigidbody>().AddForce(3 * canonForce, ForceMode.Impulse);       
-        fruit.transform.SetParent(transform);
+        
     }
 }

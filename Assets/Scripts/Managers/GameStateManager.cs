@@ -33,6 +33,7 @@ public class GameStateManager : MonoBehaviour
     public void StartGame()
     {
         currentGameState = GameState.INGAME;
+        UIManager.instance.DestroyRestartUI();
         AudioManager.instance.PlayBGMusic(transform.position);
         AudioManager.instance.PlayBGSeaMusic(transform.position);
     }
@@ -59,6 +60,16 @@ public class GameStateManager : MonoBehaviour
         UIManager.instance.DisplayRestartUI();
     }
 
+    public IEnumerator WaitAndStartGame()
+    {
+        UIManager.instance.UpdateMessageUI("3");
+        yield return new WaitForSeconds(1f);
+        UIManager.instance.UpdateMessageUI("2");
+        yield return new WaitForSeconds(1f);
+        UIManager.instance.UpdateMessageUI("1");
+        yield return new WaitForSeconds(1f);
+        StartGame();
+    }
 
     IEnumerator WaitAndRestart(float duration)
     {

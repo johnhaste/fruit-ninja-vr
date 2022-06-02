@@ -24,7 +24,7 @@ public class SlicerLandVR : MonoBehaviour
                 if(objectToBeSliced.gameObject.name == "RestartFruit")
                 {
                     print("RESTARTING GAME");
-                    GameStateManager.instance.RestartGame();
+                    StartCoroutine(GameStateManager.instance.WaitAndStartGame());
                     insideMaterial = defaultMaterial;
                 }else{
                     insideMaterial = objectToBeSliced.gameObject.GetComponent<Fruit>().insideMaterial;

@@ -80,7 +80,7 @@ public class UIManager : MonoBehaviour
 
     public void DisplayRestartUI()
     {
-        if(restartUIInstance == null)
+        if(restartUIInstance == null && GameStateManager.instance.currentGameState != GameStateManager.GameState.INGAME)
         {
             restartUIInstance = Instantiate(restartUI, new Vector3(0f, 7.5f, 0.8f), Quaternion.Euler(0, 0, 0)) as GameObject;
         }

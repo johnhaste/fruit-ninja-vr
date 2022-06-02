@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI textScore;
     public TextMeshProUGUI textHighScore;
     public TextMeshProUGUI textTime;
+    public TextMeshProUGUI textDebug;
     public GameObject restartUI;
     public GameObject restartUIInstance;
 
@@ -70,6 +71,11 @@ public class UIManager : MonoBehaviour
     public void UpdateMessageUI(string message)
     {
         textMessage.text = message;
+    }
+
+    public void UpdateMessageDebug(string message)
+    {
+        textDebug.text = message;
     }
 
     public void DisplayRestartUI()

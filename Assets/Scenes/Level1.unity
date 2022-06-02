@@ -1450,6 +1450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splashSoundEffect: {fileID: 8300000, guid: 6bde04ca14e33dc428d0dae0975e9532, type: 3}
+  canonSoundEffect: {fileID: 8300000, guid: 6467601074804b54c87400faf269e3e0, type: 3}
 --- !u!1 &1146018039
 GameObject:
   m_ObjectHideFlags: 0

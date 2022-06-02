@@ -32,6 +32,7 @@ public class GameStateManager : MonoBehaviour
     public void StartGame()
     {
         currentGameState = GameState.INGAME;
+        AudioManager.instance.PlayBGMusic(transform.position);
     }
 
     public void EndGame()

@@ -84,7 +84,8 @@ public class FruitsSpawnerManager : MonoBehaviour
     {
         indexFruit = Random.Range(0, Fruitprefabs.Length);
         GameObject fruit = Instantiate(Fruitprefabs[indexFruit], FruitsSpawner[indexFruitsSpawner].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
-            
+        AudioManager.instance.PlayCanonSound(FruitsSpawner[indexFruitsSpawner].transform.position);
+
         Vector3 canonForce = new Vector3(0f,0f,0f);
         switch(indexFruitsSpawner){
             case 0:

@@ -45,12 +45,12 @@ public class TimeManager : MonoBehaviour
             {
                 secondsLeft--;
                 UIManager.instance.UpdateTimeUI(secondsLeft);
-            }else
+            }
+            else
             {
                 StopCoroutine(DecreaseTime());
                 GameStateManager.instance.EndGame();
             }
-
             yield return new WaitForSeconds(1f);
         }
     }

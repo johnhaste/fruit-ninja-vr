@@ -15,7 +15,8 @@ public class GameStateManager : MonoBehaviour
     //Singleton
     private void Awake()
     {
-        if(instance != null && instance != this){
+        if(instance != null && instance != this)
+        {
             Destroy(this.gameObject);
             return;
         }
@@ -24,7 +25,6 @@ public class GameStateManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         StartGame();
@@ -40,6 +40,8 @@ public class GameStateManager : MonoBehaviour
     public void EndGame()
     {
         currentGameState = GameState.ENDGAME;
+
+        //Sets up a Restart Screen
         StartCoroutine(WaitAndDisplayRestartUI(2f));
         ScoreManager.instance.UpdateScore();
         UIManager.instance.UpdateMessageUI("The end!");
@@ -48,7 +50,6 @@ public class GameStateManager : MonoBehaviour
 
     public void RestartGame()
     {
-        print("Restarting Game");
         StartCoroutine(WaitAndRestart(2f));
     }
 

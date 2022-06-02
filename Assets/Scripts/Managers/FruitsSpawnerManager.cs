@@ -9,11 +9,14 @@ public class FruitsSpawnerManager : MonoBehaviour
     public GameObject[] FruitsSpawner;
     private int indexFruit;
     private int indexFruitsSpawner;
+    
+    //Waves
     private int waveNumber = 1;
-
     public float timeRate;
 
-    // Start is called before the first frame update
+    //Canon
+    private Vector3 canonForce = new Vector3(0f,0f,0f);
+    
     void Start()
     {
         StartCoroutine(CreateFruits());
@@ -23,16 +26,23 @@ public class FruitsSpawnerManager : MonoBehaviour
     {
         int secondsLeft = TimeManager.instance.GetSecondsLeft();
 
-        if(secondsLeft > 45){
+        if(secondsLeft > 45)
+        {
             timeRate = 5f;
             waveNumber = 1;
-        }else if(secondsLeft > 30){
+        }
+        else if(secondsLeft > 30)
+        {
             timeRate = 4f;
             waveNumber = 2;
-        }else if(secondsLeft > 15){
+        }
+        else if(secondsLeft > 15)
+        {
             timeRate = 4f;
             waveNumber = 3;
-        }else{
+        }
+        else
+        {
             timeRate = 2f;
             //waveNumber = 4;
         }
@@ -42,7 +52,8 @@ public class FruitsSpawnerManager : MonoBehaviour
     {
         while (true)
         {
-            if(GameStateManager.instance.currentGameState == GameStateManager.GameState.INGAME){
+            if(GameStateManager.instance.currentGameState == GameStateManager.GameState.INGAME)
+            {
                 switch(waveNumber){
                     case 1:
                         indexFruitsSpawner = Random.Range(0,FruitsSpawner.Length);
@@ -65,7 +76,8 @@ public class FruitsSpawnerManager : MonoBehaviour
 
     IEnumerator InstantiateXFruitsSameCanon(int x, float interval)
     {
-        for(int i = 0; i < x; i++){
+        for(int i = 0; i < x; i++)
+        {
             yield return new WaitForSeconds(interval);
             InstantiateRandomFruit();
         } 
@@ -73,7 +85,8 @@ public class FruitsSpawnerManager : MonoBehaviour
 
     IEnumerator InstantiateXFruitsDifferentCanons(int x, float interval)
     {
-        for(int i = 0; i < x; i++){
+        for(int i = 0; i < x; i++)
+        {
             indexFruitsSpawner = Random.Range(0,FruitsSpawner.Length);
             yield return new WaitForSeconds(interval);
             InstantiateRandomFruit();
@@ -84,11 +97,15 @@ public class FruitsSpawnerManager : MonoBehaviour
     {
         if(GameStateManager.instance.currentGameState == GameStateManager.GameState.INGAME)
         {
+            //Selects a random fruit
             indexFruit = Random.Range(0, Fruitprefabs.Length);
+
+            //Instantiates the fruit in a random canon
             GameObject fruit = Instantiate(Fruitprefabs[indexFruit], FruitsSpawner[indexFruitsSpawner].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+            
+            //Play canon sound
             AudioManager.instance.PlayCanonSound(FruitsSpawner[indexFruitsSpawner].transform.position);
 
-            Vector3 canonForce = new Vector3(0f,0f,0f);
             switch(indexFruitsSpawner){
                 case 0:
                     //Left
@@ -119,6 +136,5 @@ public class FruitsSpawnerManager : MonoBehaviour
             fruit.GetComponent<Rigidbody>().AddForce(3 * canonForce, ForceMode.Impulse);       
             fruit.transform.SetParent(transform);
         }
-        
     }
 }

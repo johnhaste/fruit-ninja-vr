@@ -304,7 +304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8949208234368311756, guid: 84c23a2f8e76029479c495d953f38c10, type: 3}
       propertyPath: m_Name
-      value: FruitsSpawnerTop (2)
+      value: FruitsSpawnerTopRight
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84c23a2f8e76029479c495d953f38c10, type: 3}
@@ -371,7 +371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8949208234368311756, guid: 84c23a2f8e76029479c495d953f38c10, type: 3}
       propertyPath: m_Name
-      value: FruitsSpawnerTop (1)
+      value: FruitsSpawnerTopLeft
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84c23a2f8e76029479c495d953f38c10, type: 3}

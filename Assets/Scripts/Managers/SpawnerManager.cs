@@ -77,14 +77,14 @@ public class SpawnerManager : MonoBehaviour
                         break;
                     case 5:
                         indexSpawner = Random.Range(0,spawnerPoint.Length);
-                        //StartCoroutine(InstantiateXFruitsDifferentCanons(3, 1f));
+                        StartCoroutine(InstantiateXFruitsDifferentCanons(3, 1f));
                         //Canonball
-                        if(Random.Range(0,2) == 1)
+                        /*if(Random.Range(0,2) == 1)
                         {
                             StartCoroutine(InstantiateXFruitsDifferentCanons(3, 1f));
                         }else{
                             StartCoroutine(InstantiateCanonBall(1f));
-                        }
+                        }*/
                         
                         break;
                 }

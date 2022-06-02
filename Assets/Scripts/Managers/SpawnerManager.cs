@@ -7,8 +7,8 @@ public class SpawnerManager : MonoBehaviour
     //Fruits
     public GameObject[] fruitprefabs;
     public GameObject[] spawnerPoint;
+    public GameObject[] canons;
     private int indexFruit;
-    private int indexSpawner;
     
     //Waves
     private int waveNumber = 1;
@@ -57,26 +57,26 @@ public class SpawnerManager : MonoBehaviour
         {
             if(GameStateManager.instance.currentGameState == GameStateManager.GameState.INGAME)
             {
-
+                int indexCurrentSpawner;
                 switch(waveNumber){
                     case 1:
-                        indexSpawner = Random.Range(0,spawnerPoint.Length);
-                        StartCoroutine(InstantiateXFruitsSameCanon(1, 1f));
+                        indexCurrentSpawner = Random.Range(0,spawnerPoint.Length);
+                        StartCoroutine(InstantiateXFruitsSameCanon(indexCurrentSpawner, 1, 1f));
                         break;
                     case 2:
-                        indexSpawner = Random.Range(0,spawnerPoint.Length);
-                        StartCoroutine(InstantiateXFruitsSameCanon(2, 1f));
+                        indexCurrentSpawner = Random.Range(0,spawnerPoint.Length);
+                        StartCoroutine(InstantiateXFruitsSameCanon(indexCurrentSpawner,2, 1f));
                         break;
                     case 3:
-                        indexSpawner = Random.Range(0,spawnerPoint.Length);
+                        indexCurrentSpawner = Random.Range(0,spawnerPoint.Length);
                         StartCoroutine(InstantiateXFruitsDifferentCanons(2, 1f));
                         break;
                     case 4:
-                        indexSpawner = Random.Range(0,spawnerPoint.Length);
+                        indexCurrentSpawner = Random.Range(0,spawnerPoint.Length);
                         StartCoroutine(InstantiateXFruitsDifferentCanons(3, 1f));
                         break;
                     case 5:
-                        indexSpawner = Random.Range(0,spawnerPoint.Length);
+                        indexCurrentSpawner = Random.Range(0,spawnerPoint.Length);
                         StartCoroutine(InstantiateXFruitsDifferentCanons(3, 1f));
                         //Canonball
                         /*if(Random.Range(0,2) == 1)
@@ -94,76 +94,85 @@ public class SpawnerManager : MonoBehaviour
         }
     }
 
-    IEnumerator InstantiateXFruitsSameCanon(int fruitsAmount, float shootInterval)
+    IEnumerator InstantiateXFruitsSameCanon(int indexCurrentSpawner,int fruitsAmount, float shootInterval)
     {
         for(int i = 0; i < fruitsAmount; i++)
         {
-            InstantiateItemInRandomSpawnPoint("fruit");
+            InstantiateItemInSpawnPoint(indexCurrentSpawner, "fruit");
             yield return new WaitForSeconds(shootInterval);
         } 
     }
 
-    IEnumerator InstantiateCanonBall(float shootInterval)
+    IEnumerator InstantiateCanonBall(int indexCurrentSpawner,float shootInterval)
     {
         yield return new WaitForSeconds(shootInterval);
-        InstantiateItemInRandomSpawnPoint("canonball");
+        InstantiateItemInSpawnPoint(Random.Range(0, spawnerPoint.Length),"canonball");
     }
 
     IEnumerator InstantiateXFruitsDifferentCanons(int x, float shootInterval)
     {
         for(int i = 0; i < x; i++)
         {
-            indexSpawner = Random.Range(0,spawnerPoint.Length);
+            int indexCurrentSpawner = Random.Range(0,spawnerPoint.Length);
             yield return new WaitForSeconds(shootInterval);
-            InstantiateItemInRandomSpawnPoint("fruit");
+            InstantiateItemInSpawnPoint(Random.Range(0, spawnerPoint.Length),"fruit");
         } 
     }
 
-    public void InstantiateItemInRandomSpawnPoint(string typeOfObject)
+    public void InstantiateItemInSpawnPoint(int indexCurrentSpawner, string typeOfObject)
     {
         if(GameStateManager.instance.currentGameState == GameStateManager.GameState.INGAME)
         {
             GameObject item;
+
+            //Animate Canon
+            //canons[indexCurrentSpawner].GetComponent<Animator>().SetTrigger("Shoot");
 
             if(typeOfObject == "fruit"){
                 //Selects a random fruit
                 indexFruit = Random.Range(0, fruitprefabs.Length);
 
                 //Instantiates the fruit in a random canon
-                item = Instantiate(fruitprefabs[indexFruit], spawnerPoint[indexSpawner].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+                item = Instantiate(fruitprefabs[indexFruit], spawnerPoint[indexCurrentSpawner].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
             
             }else{
                 
                 //Instantiates the canonBall in a random canon
-                item = Instantiate(canonBall, spawnerPoint[indexSpawner].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+                item = Instantiate(canonBall, spawnerPoint[indexCurrentSpawner].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
             }
             
             //Play canon sound
-            AudioManager.instance.PlayCanonSound(spawnerPoint[indexSpawner].transform.position);
+            AudioManager.instance.PlayCanonSound(spawnerPoint[indexCurrentSpawner].transform.position);
 
-            switch(indexSpawner){
+            switch(indexCurrentSpawner){
                 case 0:
                     //Left
+                    canons[0].GetComponent<Animator>().SetTrigger("Shoot");
                     canonForce = new Vector3(4f,Random.Range(4,5),Random.Range(-6f,-7f));
                     break;
                 case 1:
                     //Center
+                    canons[1].GetComponent<Animator>().SetTrigger("Shoot");
                     canonForce = new Vector3(0f,Random.Range(4,5),Random.Range(-6f,-7f));
                     break;
                 case 2:
                     //Right
+                    canons[2].GetComponent<Animator>().SetTrigger("Shoot");
                     canonForce = new Vector3(-4f,Random.Range(4,5),Random.Range(-6f,-7f));
                     break;
                 case 3:
                     //top-left
+                    canons[3].GetComponent<Animator>().SetTrigger("Shoot");
                     canonForce = new Vector3(4f,Random.Range(1,2),-11f);
                     break;
                 case 4:
                     //top
+                    canons[4].GetComponent<Animator>().SetTrigger("Shoot");
                     canonForce = new Vector3(0f,Random.Range(1,2),-11f);
                     break;
                 case 5:
                     //top-right
+                    canons[5].GetComponent<Animator>().SetTrigger("Shoot");
                     canonForce = new Vector3(-4f,Random.Range(1,2),-11f);
                     break;
             }

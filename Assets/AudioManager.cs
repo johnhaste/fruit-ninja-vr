@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     [Header("Sound FX")]
     public AudioClip splashSoundEffect;
     public AudioClip canonSoundEffect;
+    public AudioClip swordWooshSoundEffect;
 
     [Header("Background Music")]
     public AudioClip backgroundMusic1;
@@ -42,5 +43,10 @@ public class AudioManager : MonoBehaviour
     public void PlayCanonSound(Vector3 position)
     {
         AudioSource.PlayClipAtPoint(canonSoundEffect, position);
+    }
+
+    public void PlaySwordWoosh(Vector3 position)
+    {
+        AudioSource.PlayClipAtPoint(swordWooshSoundEffect, position);
     }
 }

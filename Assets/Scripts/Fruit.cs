@@ -21,8 +21,8 @@ public class Fruit : MonoBehaviour
            if(lastPosition == transform.position){
                this.gameObject.AddComponent<DestroyAfterSeconds>();
            }
-           yield return new WaitForSeconds(5f);
            lastPosition = transform.position;
+           yield return new WaitForSeconds(5f);
         }
     }
 

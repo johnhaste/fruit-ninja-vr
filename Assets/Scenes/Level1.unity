@@ -123,6 +123,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &39425726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1435089751402464618, guid: ae50880ea5d195b4cbd5a0322e5c3ac5, type: 3}
+  m_PrefabInstance: {fileID: 361141374}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &39425732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39425726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 985c1bc80f57d10458a69220003fbabb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &84590970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,8 +1467,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0683578e34151344199104d10b27a841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  volume: 0.33
   splashSoundEffect: {fileID: 8300000, guid: 6bde04ca14e33dc428d0dae0975e9532, type: 3}
   canonSoundEffect: {fileID: 8300000, guid: 6467601074804b54c87400faf269e3e0, type: 3}
+  swordWooshSoundEffect: {fileID: 8300000, guid: 4e58e319e7ee6d44581c1db6797d3b58, type: 3}
+  backgroundMusic1: {fileID: 8300000, guid: 9bb1a0a4898605f4bbf4f75a4d28d258, type: 3}
 --- !u!1 &1146018039
 GameObject:
   m_ObjectHideFlags: 0

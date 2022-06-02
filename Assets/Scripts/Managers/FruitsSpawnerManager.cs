@@ -66,8 +66,8 @@ public class FruitsSpawnerManager : MonoBehaviour
     IEnumerator InstantiateXFruitsSameCanon(int x, float interval)
     {
         for(int i = 0; i < x; i++){
-            InstantiateRandomFruit();
             yield return new WaitForSeconds(interval);
+            InstantiateRandomFruit();
         } 
     }
 
@@ -75,8 +75,8 @@ public class FruitsSpawnerManager : MonoBehaviour
     {
         for(int i = 0; i < x; i++){
             indexFruitsSpawner = Random.Range(0,FruitsSpawner.Length);
-            InstantiateRandomFruit();
             yield return new WaitForSeconds(interval);
+            InstantiateRandomFruit();
         } 
     }
 

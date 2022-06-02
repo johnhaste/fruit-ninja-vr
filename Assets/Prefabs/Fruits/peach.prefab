@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3181747929473113146}
   - component: {fileID: 2586131748827069979}
   - component: {fileID: 5750313972580220696}
+  - component: {fileID: 6029620035369192243}
   m_Layer: 6
   m_Name: peach
   m_TagString: Untagged
@@ -128,6 +129,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76ad183c88c873b49a9610616ebb788e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastPosition: {x: 0, y: 0, z: 0}
   insideMaterial: {fileID: 2100000, guid: 5ec4b4e931a39a2438b4dcc4b446d100, type: 2}
   splashParticleFruit: {fileID: 3733782003175091835, guid: 20a802ad641c8f84caa6dfbee356ad2f, type: 3}
+--- !u!114 &6029620035369192243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3181747929474367549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e8e5a13d8a70c04a9130f45b6bf7998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastPosition: {x: 0, y: 0, z: 0}

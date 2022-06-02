@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7506411524126935264}
   - component: {fileID: 7506411524126935199}
   - component: {fileID: -6789028252671774061}
+  - component: {fileID: 4089318039202501024}
   m_Layer: 6
   m_Name: cherries
   m_TagString: Untagged
@@ -128,6 +129,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76ad183c88c873b49a9610616ebb788e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastPosition: {x: 0, y: 0, z: 0}
   insideMaterial: {fileID: 2100000, guid: d73f8afe478afde498d6b36047a52c73, type: 2}
   splashParticleFruit: {fileID: 3733782003175091835, guid: 20a802ad641c8f84caa6dfbee356ad2f, type: 3}
+--- !u!114 &4089318039202501024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7506411524124038369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e8e5a13d8a70c04a9130f45b6bf7998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastPosition: {x: 0, y: 0, z: 0}

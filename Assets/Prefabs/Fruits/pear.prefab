@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5738094217286882507}
   - component: {fileID: 4640345564227041214}
   - component: {fileID: 8587071142336006361}
+  - component: {fileID: 8476912466632089243}
   m_Layer: 6
   m_Name: pear
   m_TagString: Untagged
@@ -128,6 +129,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76ad183c88c873b49a9610616ebb788e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastPosition: {x: 0, y: 0, z: 0}
   insideMaterial: {fileID: 2100000, guid: 584662273d60a0f47bd7fecbb570e66e, type: 2}
   splashParticleFruit: {fileID: 3733782003175091835, guid: 8c2cd8ce60646fe45a92dda20671a33f, type: 3}
+--- !u!114 &8476912466632089243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5738094217287715028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e8e5a13d8a70c04a9130f45b6bf7998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastPosition: {x: 0, y: 0, z: 0}

@@ -45,14 +45,27 @@ public class SlicerLandVR : MonoBehaviour
                 //Add Score
                 ScoreManager.instance.AddScore(50);
 
+                //Make it recuttable
+                /*
+                upperHullGameobject.gameObject.AddComponent<Fruit>();
+                lowerHullGameobject.gameObject.AddComponent<Fruit>();
+                
+                upperHullGameobject.GetComponent<Fruit>().insideMaterial = objectToBeSliced.gameObject.GetComponent<Fruit>().insideMaterial;
+                lowerHullGameobject.GetComponent<Fruit>().insideMaterial = objectToBeSliced.gameObject.GetComponent<Fruit>().insideMaterial;
+                
+                upperHullGameobject.GetComponent<Fruit>().splashParticleFruit = objectToBeSliced.gameObject.GetComponent<Fruit>().splashParticleFruit;
+                lowerHullGameobject.GetComponent<Fruit>().splashParticleFruit = objectToBeSliced.gameObject.GetComponent<Fruit>().splashParticleFruit;
+
                 //Destroys the slices after a few seconds
                 upperHullGameobject.gameObject.AddComponent<DestroyAfterSeconds>();
                 lowerHullGameobject.gameObject.AddComponent<DestroyAfterSeconds>();
+                */
 
                 //Makes it explode
                 Vector3 randomForce = new Vector3(Random.Range(0,3f),Random.Range(0,3f),Random.Range(0,3f));
                 upperHullGameobject.GetComponent<Rigidbody>().AddForce(randomForce, ForceMode.Impulse); 
                 lowerHullGameobject.GetComponent<Rigidbody>().AddForce(-randomForce, ForceMode.Impulse); 
+                
             }
 
             this.GetComponent<MeshCollider>().enabled = false;

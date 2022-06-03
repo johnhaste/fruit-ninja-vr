@@ -33,7 +33,10 @@ public class GameStateManager : MonoBehaviour
     public void StartGame()
     {
         currentGameState = GameState.INGAME;
-        UIManager.instance.DestroyRestartUI();
+
+        //Update game state
+        currentGameState = GameState.INGAME;
+
         AudioManager.instance.PlayBGMusic(transform.position);
         AudioManager.instance.PlayBGSeaMusic(transform.position);
     }
@@ -43,15 +46,16 @@ public class GameStateManager : MonoBehaviour
         currentGameState = GameState.ENDGAME;
 
         //Sets up a Restart Screen
-        StartCoroutine(WaitAndDisplayRestartUI(2f));
+        //StartCoroutine(WaitAndDisplayRestartUI(2f));
+        UIManager.instance.DisplayRestartUI();
         ScoreManager.instance.UpdateScore();
-        UIManager.instance.UpdateMessageUI("The end!");
+        UIManager.instance.UpdateMessageUI("Gam over!");
         UIManager.instance.HideUIElement(UIManager.instance.textTime);
     }
 
     public void RestartGame()
     {
-        StartCoroutine(WaitAndRestart(2f));
+        StartCoroutine(WaitAndRestart());
     }
 
     IEnumerator WaitAndDisplayRestartUI(float duration)
@@ -60,20 +64,9 @@ public class GameStateManager : MonoBehaviour
         UIManager.instance.DisplayRestartUI();
     }
 
-    public IEnumerator WaitAndStartGame()
+    public IEnumerator WaitAndRestart()
     {
-        UIManager.instance.UpdateMessageUI("3");
-        yield return new WaitForSeconds(1f);
-        UIManager.instance.UpdateMessageUI("2");
-        yield return new WaitForSeconds(1f);
-        UIManager.instance.UpdateMessageUI("1");
-        yield return new WaitForSeconds(1f);
-        StartGame();
-    }
-
-    IEnumerator WaitAndRestart(float duration)
-    {
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSeconds(2f);
 
         //Update UI
         UIManager.instance.DestroyRestartUI();
@@ -83,6 +76,9 @@ public class GameStateManager : MonoBehaviour
         //Restart Params
         ScoreManager.instance.RestartScore();
         TimeManager.instance.RestartTimer();
+
+        //Stops infinite loop
+        StopCoroutine(WaitAndRestart());
         
         //Update game state
         currentGameState = GameState.INGAME;

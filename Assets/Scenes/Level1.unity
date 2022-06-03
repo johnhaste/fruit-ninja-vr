@@ -510,13 +510,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 623298045}
     m_Modifications:
+    - target: {fileID: 1435089751402464529, guid: ae50880ea5d195b4cbd5a0322e5c3ac5, type: 3}
+      propertyPath: redMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 33749956b93f34d4aa5596cf9300e08c, type: 2}
     - target: {fileID: 1435089751402464533, guid: ae50880ea5d195b4cbd5a0322e5c3ac5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.03
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1435089751402464533, guid: ae50880ea5d195b4cbd5a0322e5c3ac5, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.05
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1435089751402464533, guid: ae50880ea5d195b4cbd5a0322e5c3ac5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -540,11 +544,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 33749956b93f34d4aa5596cf9300e08c, type: 2}
     - target: {fileID: 1435089752680284198, guid: ae50880ea5d195b4cbd5a0322e5c3ac5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.846
+      value: 0.823
       objectReference: {fileID: 0}
     - target: {fileID: 1435089752680284198, guid: ae50880ea5d195b4cbd5a0322e5c3ac5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.056
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 1435089752756966889, guid: ae50880ea5d195b4cbd5a0322e5c3ac5, type: 3}
       propertyPath: m_RootOrder
@@ -1159,7 +1163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &819821387
 RectTransform:
   m_ObjectHideFlags: 0

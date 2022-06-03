@@ -5,7 +5,7 @@ using UnityEngine;
 public class TimeManager : MonoBehaviour
 {
     [SerializeField] private int secondsLeft = 5;
-    private int secondsByMatch = 60;
+    private int secondsByMatch = 120;
 
     //Singleton
     public static TimeManager instance;

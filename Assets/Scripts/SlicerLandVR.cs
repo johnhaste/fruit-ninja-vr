@@ -20,17 +20,9 @@ public class SlicerLandVR : MonoBehaviour
             {
                 Material insideMaterial;
 
-                //Restart Fruit
-                if(objectToBeSliced.gameObject.name == "RestartFruit")
-                {
-                    print("RESTARTING GAME");
-                    StartCoroutine(GameStateManager.instance.WaitAndStartGame());
-                    insideMaterial = defaultMaterial;
-                }else{
-                    insideMaterial = objectToBeSliced.gameObject.GetComponent<Fruit>().insideMaterial;
-                    objectToBeSliced.gameObject.GetComponent<Fruit>().EmitSplash();
-                }
-
+                insideMaterial = objectToBeSliced.gameObject.GetComponent<Fruit>().insideMaterial;
+                objectToBeSliced.gameObject.GetComponent<Fruit>().EmitSplash();
+                
                 SlicedHull slicedObject = SliceObject(objectToBeSliced.gameObject, insideMaterial);
 
                 GameObject upperHullGameobject = slicedObject.CreateUpperHull(objectToBeSliced.gameObject, insideMaterial);
@@ -56,6 +48,11 @@ public class SlicerLandVR : MonoBehaviour
                 //Destroys the slices after a few seconds
                 upperHullGameobject.gameObject.AddComponent<DestroyAfterSeconds>();
                 lowerHullGameobject.gameObject.AddComponent<DestroyAfterSeconds>();
+
+                //Makes it explode
+                Vector3 randomForce = new Vector3(Random.Range(0,3f),Random.Range(0,3f),Random.Range(0,3f));
+                upperHullGameobject.GetComponent<Rigidbody>().AddForce(randomForce, ForceMode.Impulse); 
+                lowerHullGameobject.GetComponent<Rigidbody>().AddForce(-randomForce, ForceMode.Impulse); 
             }
 
             this.GetComponent<MeshCollider>().enabled = false;
